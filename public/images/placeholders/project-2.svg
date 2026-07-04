@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" role="img" aria-label="Leak detection placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dfeaf2"/>
+      <stop offset="1" stop-color="#b9d2e2"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#g)"/>
+  <g transform="translate(200,150)">
+    <circle r="37" fill="#2b9fe3" opacity="0.9"/>
+    <path transform="scale(1.562)" transform-origin="0 0" d="M-7 -2 L-2 3 L-4 5 Q-8 9 -11 6 Q-14 3 -10 -1 Z M-2 -7 Q2 -11 6 -8 L3 -5 L5 -3 L8 -6 Q11 -2 7 2 L2 -3 Z" fill="#fff"/>
+    <text y="65" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="600" fill="#4a5a68">Leak detection</text>
+  </g>
+</svg>

@@ -1,0 +1,86 @@
+---
+// Projects — "Our Latest Projects"
+// Mockup: centered heading, 3-column card grid, each with image + tag + title + arrow CTA.
+const projects = [
+  {
+    img: "/images/unsplash/project-1.jpg",
+    alt: "Modern bathroom renovation with new pipe installation",
+    tag: "Bath Room",
+    title: "Modern Bathroom Pipe Replacement",
+  },
+  {
+    img: "/images/unsplash/project-2.jpg",
+    alt: "Underground pipeline installation for a residential property",
+    tag: "Pipe Line",
+    title: "Full Property Repiping Service",
+  },
+  {
+    img: "/images/unsplash/project-3.jpg",
+    alt: "Kitchen faucet and drain installation",
+    tag: "Kitchen Sink",
+    title: "Kitchen Faucet & Drain Installation",
+  },
+];
+---
+
+<section id="projects" class="bg-surface-alt py-16 md:py-24">
+  <div class="container-site">
+    <!-- Heading -->
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
+        Our <span class="text-accent-text">Latest</span> Projects
+      </h2>
+    </div>
+
+    <!-- Cards -->
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {
+        projects.map(({ img, alt, tag, title }) => (
+          <article class="group overflow-hidden rounded-[var(--radius-4xl)] bg-surface shadow-sm shadow-ink/5 transition hover:shadow-md hover:shadow-ink/10">
+            <!-- Image -->
+            <div class="overflow-hidden">
+              <img
+                src={img}
+                alt={alt}
+                width="480"
+                height="320"
+                loading="lazy"
+                class="aspect-[3/2] w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+            <!-- Body -->
+            <div class="flex items-center justify-between gap-4 p-6">
+              <div>
+                <span class="inline-block rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent-text">
+                  {tag}
+                </span>
+                <h3 class="mt-2 text-base font-bold text-ink">{title}</h3>
+              </div>
+              <a
+                href="#contact"
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-white transition hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+                aria-label={`View project: ${title}`}
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M7 17 17 7m0 0H9m8 0v8"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

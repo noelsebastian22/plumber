@@ -1,0 +1,168 @@
+---
+// Appointment — "Saving Your Money With Efficient Plumbing Technologies"
+// Mockup: dark section with bg image overlay, copy left, white form card right.
+const services = [
+  "Plumbing Repairs & Installation",
+  "Drain & Sewer Cleaning",
+  "Water Heater Service",
+  "Pipe Installation",
+  "Emergency Service",
+  "Commercial Plumbing",
+];
+---
+
+<section id="contact" class="relative overflow-hidden bg-ink py-16 md:py-24">
+  <!-- Background image with dark overlay -->
+  <img
+    src="/images/unsplash/appointment.jpg"
+    alt=""
+    aria-hidden="true"
+    width="1440"
+    height="700"
+    loading="lazy"
+    class="absolute inset-0 h-full w-full object-cover opacity-20"
+  />
+
+  <div
+    class="container-site relative grid items-center gap-12 lg:grid-cols-2 lg:gap-16"
+  >
+    <!-- Left: copy -->
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-widest text-accent">
+        Book Appointment
+      </p>
+      <h2
+        class="mt-3 text-3xl font-extrabold tracking-tight text-white md:text-4xl"
+      >
+        Saving Your Money With Efficient Plumbing Technologies
+      </h2>
+      <p class="mt-5 max-w-prose text-sm leading-relaxed text-white/70">
+        Don't let plumbing problems drain your wallet. Our licensed technicians
+        diagnose the root cause fast and fix it right the first time —
+        transparent pricing, no hidden fees, guaranteed workmanship.
+      </p>
+      <ul class="mt-6 space-y-3 text-sm text-white/80">
+        {
+          [
+            "24/7 Emergency Response",
+            "Upfront Flat-Rate Pricing",
+            "Licensed & Insured Technicians",
+          ].map((item) => (
+            <li class="flex items-center gap-3">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent">
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="m5 12 5 5 9-10"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Right: form card -->
+    <div class="rounded-[var(--radius-4xl)] bg-surface p-8">
+      <h3 class="text-xl font-bold text-ink">Make An Appointment</h3>
+      <form class="mt-6 grid grid-cols-2 gap-4" novalidate>
+        <!-- Name -->
+        <div class="col-span-2 sm:col-span-1">
+          <label
+            class="mb-1.5 block text-xs font-semibold text-muted"
+            for="appt-name">Full Name</label
+          >
+          <input
+            id="appt-name"
+            type="text"
+            placeholder="John Smith"
+            class="w-full rounded-xl border border-line bg-surface-alt px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+          />
+        </div>
+        <!-- Email -->
+        <div class="col-span-2 sm:col-span-1">
+          <label
+            class="mb-1.5 block text-xs font-semibold text-muted"
+            for="appt-email">Email Address</label
+          >
+          <input
+            id="appt-email"
+            type="email"
+            placeholder="john@email.com"
+            class="w-full rounded-xl border border-line bg-surface-alt px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+          />
+        </div>
+        <!-- Phone -->
+        <div class="col-span-2 sm:col-span-1">
+          <label
+            class="mb-1.5 block text-xs font-semibold text-muted"
+            for="appt-phone">Telephone</label
+          >
+          <input
+            id="appt-phone"
+            type="tel"
+            placeholder="(001) 123 456 789"
+            class="w-full rounded-xl border border-line bg-surface-alt px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+          />
+        </div>
+        <!-- Date -->
+        <div class="col-span-2 sm:col-span-1">
+          <label
+            class="mb-1.5 block text-xs font-semibold text-muted"
+            for="appt-date">Date</label
+          >
+          <input
+            id="appt-date"
+            type="date"
+            class="w-full rounded-xl border border-line bg-surface-alt px-4 py-3 text-sm text-ink focus:border-accent focus:outline-none"
+          />
+        </div>
+        <!-- Service -->
+        <div class="col-span-2">
+          <label
+            class="mb-1.5 block text-xs font-semibold text-muted"
+            for="appt-service">Select Services</label
+          >
+          <select
+            id="appt-service"
+            class="w-full rounded-xl border border-line bg-surface-alt px-4 py-3 text-sm text-ink focus:border-accent focus:outline-none"
+          >
+            <option value="" disabled selected>Choose a service…</option>
+            {services.map((s) => <option value={s}>{s}</option>)}
+          </select>
+        </div>
+        <!-- Message -->
+        <div class="col-span-2">
+          <label
+            class="mb-1.5 block text-xs font-semibold text-muted"
+            for="appt-message">Message</label
+          >
+          <textarea
+            id="appt-message"
+            rows="3"
+            placeholder="Describe the issue…"
+            class="w-full resize-none rounded-xl border border-line bg-surface-alt px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-accent focus:outline-none"
+          ></textarea>
+        </div>
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="col-span-2 rounded-full bg-accent py-3.5 text-sm font-semibold text-white transition hover:bg-accent-dark"
+        >
+          Make An Appointment
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

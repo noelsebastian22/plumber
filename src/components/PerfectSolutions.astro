@@ -1,0 +1,87 @@
+---
+// Perfect Solutions — "The Perfect Solutions For All Plumbing Services"
+// Mockup: copy + two dark feature rows left, photo collage right.
+const perks = [
+  {
+    title: "Affordable Price",
+    body: "Fair, flat-rate quotes before any work begins — no call-out surprises, no hidden fees, and free estimates on larger jobs.",
+    icon: "price",
+  },
+  {
+    title: "Expert Plumber",
+    body: "Licensed, insured, and continually trained technicians who diagnose the root cause instead of patching the symptom.",
+    icon: "expert",
+  },
+];
+---
+
+<section class="bg-surface py-16 md:py-24">
+  <div class="container-site grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <!-- Copy + perks -->
+    <div>
+      <h2 class="text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
+        The Perfect Solutions For All Plumbing Services
+      </h2>
+      <p class="mt-5 max-w-prose text-sm leading-relaxed text-muted md:text-base">
+        From a dripping tap to a full system overhaul, we pair honest advice
+        with quality parts and clean workmanship — so the fix lasts and your
+        home stays exactly as we found it, only working better.
+      </p>
+      <div class="mt-8 space-y-4">
+        {
+          perks.map(({ title, body, icon }) => (
+            <article class="flex items-start gap-4 rounded-2xl bg-ink p-5 text-white">
+              <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent">
+                {icon === "price" && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M3 3h8l10 10-8 8L3 11V3Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="8" cy="8" r="1.6" fill="currentColor" />
+                  </svg>
+                )}
+                {icon === "expert" && (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M14.7 6.3a4.5 4.5 0 0 0-6.09 5.4L3 17.3V21h3.7l5.6-5.6a4.5 4.5 0 0 0 5.4-6.1l-2.9 2.9-2.5-.5-.5-2.5 2.9-2.9Z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                )}
+              </span>
+              <div>
+                <h3 class="text-base font-bold">{title}</h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-white/70">{body}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Collage -->
+    <div class="relative mx-auto w-full max-w-lg">
+      <img
+        src="/images/unsplash/perfect-plumber.jpg"
+        alt="Plumber in overalls adjusting a kitchen faucet"
+        width="640"
+        height="760"
+        loading="lazy"
+        class="ml-auto aspect-[4/5] w-4/5 rounded-[var(--radius-4xl)] object-cover"
+      />
+      <img
+        src="/images/unsplash/about-3.jpg"
+        alt="Technician inspecting bathroom pipework"
+        width="480"
+        height="480"
+        loading="lazy"
+        class="absolute bottom-8 left-0 aspect-square w-2/5 rounded-[var(--radius-4xl)] border-8 border-surface object-cover"
+      />
+    </div>
+  </div>
+</section>

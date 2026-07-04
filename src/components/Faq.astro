@@ -1,0 +1,89 @@
+---
+// FAQ — "Professional Plumbing Repair For Residential & Commercial Properties"
+// Mockup: copy + CTA left, numbered accordion right (first item open).
+const faqs = [
+  {
+    q: "If I face an issue, how can I contact you?",
+    a: "Call us any time on (001) 123 456 789 or use the booking form — we answer around the clock. For emergencies we dispatch the nearest available technician immediately; for routine work we'll confirm a convenient appointment window the same day.",
+  },
+  {
+    q: "Do you handle both residential and commercial jobs?",
+    a: "Yes. Our teams service homes, retail spaces, restaurants, and offices — from single-fixture repairs to scheduled maintenance contracts and full fit-outs, with the licensing and insurance each setting requires.",
+  },
+  {
+    q: "Are your quotes really fixed up front?",
+    a: "Every job starts with a written, flat-rate quote after diagnosis. The price you approve is the price you pay — if the job takes longer than expected, that's on us, not your bill.",
+  },
+  {
+    q: "How should I pay a plumber?",
+    a: "Whatever suits you: card, bank transfer, or cash on completion. For larger installations we offer staged payments, and you'll always receive an itemized invoice covering parts, labor, and warranty terms.",
+  },
+];
+---
+
+<section id="faq" class="bg-surface py-16 md:py-24">
+  <div class="container-site grid gap-12 lg:grid-cols-2 lg:gap-16">
+    <!-- Copy -->
+    <div>
+      <h2 class="text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
+        Professional Plumbing Repair For Residential &amp; Commercial
+        Properties
+      </h2>
+      <p class="mt-5 max-w-prose text-sm leading-relaxed text-muted md:text-base">
+        We understand that plumbing issues can be stressful and disruptive to
+        your daily routine, which is why we provide prompt and efficient
+        service to minimize any inconvenience to you. We also believe in clear
+        and honest communication throughout the process, ensuring that you
+        understand what's happening and how we plan to fix the issue. You can
+        trust that you're getting expert service.
+      </p>
+      <a
+        href="#contact"
+        class="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-ink-soft"
+      >
+        Ask Questions
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="M5 12h14m0 0-6-6m6 6-6 6"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Accordion -->
+    <div class="divide-y divide-line border-y border-line">
+      {
+        faqs.map(({ q, a }, i) => (
+          <details class="group py-5" open={i === 0}>
+            <summary class="flex cursor-pointer list-none items-center gap-3 text-left text-base font-bold text-ink [&::-webkit-details-marker]:hidden">
+              <span>
+                {i + 1}. {q}
+              </span>
+              <svg
+                class="ml-auto shrink-0 text-ink transition-transform group-open:rotate-180"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="m6 9 6 6 6-6"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </summary>
+            <p class="mt-3 pr-8 text-sm leading-relaxed text-muted">{a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

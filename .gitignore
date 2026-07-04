@@ -1,0 +1,47 @@
+# ── Build output ──────────────────────────────────────────────
+dist/
+
+# ── Generated types ───────────────────────────────────────────
+.astro/
+
+# ── Dependencies ──────────────────────────────────────────────
+node_modules/
+
+# ── Logs ──────────────────────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# ── Environment variables ─────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── AI agent & tool directories ───────────────────────────────
+.agents/
+.claude/
+.impeccable/
+
+# ── AI-generated runtime files ────────────────────────────────
+memory.md
+skills-lock.json
+
+# ── Large / binary media (use public/ + CDN or Git LFS) ───────
+*.mp4
+*.mov
+*.avi
+*.webm
+
+# ── macOS ─────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+
+# ── IDE ───────────────────────────────────────────────────────
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

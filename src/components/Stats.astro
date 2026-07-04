@@ -1,0 +1,70 @@
+---
+// Stats band — counts up on scroll (IntersectionObserver, no library).
+const stats = [
+  { value: 1.25, suffix: "k", decimals: 2, label: "Successful Projects" },
+  { value: 1.24, suffix: "k", decimals: 2, label: "Satisfied customers" },
+  { value: 250, suffix: "+", decimals: 0, label: "Expert Plumbers" },
+  { value: 100, suffix: "%", decimals: 0, label: "Quality Products" },
+];
+---
+
+<section class="border-y border-line bg-surface py-12 md:py-16">
+  <div
+    class="container-site grid grid-cols-2 gap-8 text-center lg:grid-cols-4"
+    data-stats
+  >
+    {
+      stats.map(({ value, suffix, decimals, label }) => (
+        <div>
+          <p class="text-4xl font-extrabold tracking-tight text-ink md:text-5xl">
+            <span
+              data-count
+              data-target={value}
+              data-decimals={decimals}
+            >
+              {value.toFixed(decimals)}
+            </span
+            ><span class="text-accent-text">{suffix}</span>
+          </p>
+          <p class="mt-2 text-sm font-medium text-muted">{label}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  const section = document.querySelector("[data-stats]");
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (section && !reduced && "IntersectionObserver" in window) {
+    const counters =
+      section.querySelectorAll<HTMLElement>("[data-count]");
+
+    const animate = (el: HTMLElement) => {
+      const target = parseFloat(el.dataset.target ?? "0");
+      const decimals = parseInt(el.dataset.decimals ?? "0", 10);
+      const duration = 1200;
+      const start = performance.now();
+
+      const tick = (now: number) => {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = (target * eased).toFixed(decimals);
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          counters.forEach(animate);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 },
+    );
+    observer.observe(section);
+  }
+</script>

@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import FeatureCards from "../components/FeatureCards.astro";
+import About from "../components/About.astro";
+import Services from "../components/Services.astro";
+import Solution from "../components/Solution.astro";
+import PerfectSolutions from "../components/PerfectSolutions.astro";
+import Stats from "../components/Stats.astro";
+import Faq from "../components/Faq.astro";
+import Projects from "../components/Projects.astro";
+import Appointment from "../components/Appointment.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="PLUMBER. — A Dedicated Plumbing & Handyman Services Company"
+  description="Quality workmanship and customer satisfaction — plumbing repairs, installations, carpentry, painting, electrical fixes and more. 24/7 availability across New York."
+>
+  <Header />
+  <main id="main-content">
+    <Hero />
+    <FeatureCards />
+    <About />
+    <Services />
+    <Solution />
+    <PerfectSolutions />
+    <Stats />
+    <Faq />
+    <Projects />
+    <Appointment />
+    <Testimonials />
+  </main>
+  <Footer />
+</BaseLayout>

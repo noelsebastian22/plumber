@@ -1,0 +1,68 @@
+---
+// About — "Our Company Provide The Best Plumbing Service"
+// Layout from mockup: image collage + 25-years badge left, copy right.
+---
+
+<section id="about" class="bg-surface py-16 md:py-24">
+  <div class="container-site grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <!-- Collage -->
+    <div class="relative mx-auto w-full max-w-lg">
+      <img
+        src="/images/unsplash/about-1.jpg"
+        alt="Certified plumber repairing a pipe joint under a kitchen sink"
+        width="640"
+        height="760"
+        loading="lazy"
+        class="aspect-[4/5] w-3/4 rounded-[var(--radius-4xl)] object-cover"
+      />
+      <img
+        src="/images/unsplash/about-2.jpg"
+        alt="Technician installing a new basin faucet"
+        width="480"
+        height="480"
+        loading="lazy"
+        class="absolute bottom-0 right-0 aspect-square w-1/2 rounded-[var(--radius-4xl)] border-8 border-surface object-cover"
+      />
+      <!-- 25 years badge -->
+      <div
+        class="absolute right-[8%] top-0 flex flex-col items-center gap-2 rounded-2xl bg-surface px-4 py-5 shadow-lg shadow-ink/10"
+      >
+        <span class="text-4xl font-extrabold text-accent-text">25</span>
+        <span
+          class="text-[0.65rem] font-semibold uppercase tracking-widest text-muted [writing-mode:vertical-rl]"
+        >
+          Years Experience
+        </span>
+      </div>
+    </div>
+
+    <!-- Copy -->
+    <div>
+      <h2 class="text-3xl font-extrabold tracking-tight text-ink md:text-4xl">
+        Our company provides the best plumbing service
+      </h2>
+      <p class="mt-5 max-w-prose text-sm leading-relaxed text-muted md:text-base">
+        For over 25 years, PLUMBER. has kept homes and businesses across New
+        York flowing smoothly. Our licensed, background-checked technicians
+        handle everything from routine maintenance and fixture upgrades to
+        full repipes and water heater replacements — always with upfront
+        pricing, tidy workmanship, and a workmanship guarantee on every job.
+      </p>
+      <a
+        href="#services"
+        class="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-ink-soft"
+      >
+        Learn more
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="M5 12h14m0 0-6-6m6 6-6 6"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

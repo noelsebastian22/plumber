@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "@fontsource-variable/plus-jakarta-sans";
+
+@theme {
+  /* Brand palette (extracted from mockups) */
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #141414;
+  --color-accent: #2b9fe3;
+  --color-accent-dark: #1e8ac9;
+  --color-accent-text: #1677b3; /* AA-safe for text on light surfaces — 4.86:1 on white */
+  --color-star: oklch(0.82 0.15 85); /* amber for star ratings */
+  --color-surface: #ffffff;
+  --color-surface-alt: #eef3f6;
+  --color-muted: #5a6570;
+  --color-line: #e4e9ee;
+
+  /* Typography */
+  --font-sans: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", sans-serif;
+
+  /* Shape language */
+  --radius-4xl: 2rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Shared section rhythm */
+@utility container-site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 76rem; /* 1216px — matches mockup content width at 1440 */
+  padding-inline: 1.25rem;
+
+  @media (width >= 40rem) {
+    padding-inline: 2rem;
+  }
+}

@@ -1,0 +1,61 @@
+---
+const features = [
+  {
+    title: "Trusted Expertise",
+    body: "With years of experience, our certified plumbers deliver top-quality service on every job, big or small.",
+    icon: "wrench",
+  },
+  {
+    title: "24/7 Availability",
+    body: "Plumbing issues can happen anytime. That's why we're available around the clock to handle your emergencies.",
+    icon: "clock",
+  },
+  {
+    title: "Upfront Pricing",
+    body: "No hidden fees — just honest, transparent pricing so you know exactly what you're paying for before we start.",
+    icon: "tag",
+  },
+];
+---
+
+<section class="bg-ink pb-16 pt-10 md:pb-20 md:pt-14">
+  <div class="container-site grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      features.map(({ title, body, icon }) => (
+        <article class="bg-surface p-7">
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent">
+            {icon === "wrench" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M14.7 6.3a4.5 4.5 0 0 0-6.09 5.4L3 17.3V21h3.7l5.6-5.6a4.5 4.5 0 0 0 5.4-6.1l-2.9 2.9-2.5-.5-.5-2.5 2.9-2.9Z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            )}
+            {icon === "clock" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7" />
+                <path d="M12 7v5l3.2 1.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+              </svg>
+            )}
+            {icon === "tag" && (
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M3 3h8l10 10-8 8L3 11V3Z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linejoin="round"
+                />
+                <circle cx="8" cy="8" r="1.6" fill="currentColor" />
+              </svg>
+            )}
+          </span>
+          <h2 class="mt-5 text-lg font-bold text-ink">{title}</h2>
+          <p class="mt-2 text-sm leading-relaxed text-muted">{body}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>
