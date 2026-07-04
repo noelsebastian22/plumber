@@ -28,11 +28,6 @@ pnpm-debug.log*
 memory.md
 skills-lock.json
 
-# ── Large / binary media (use public/ + CDN or Git LFS) ───────
-*.mp4
-*.mov
-*.avi
-*.webm
 
 # ── macOS ─────────────────────────────────────────────────────
 .DS_Store
