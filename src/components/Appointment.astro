@@ -74,7 +74,7 @@ const services = [
     </div>
 
     <!-- Right: form card -->
-    <div class="rounded-[var(--radius-4xl)] bg-surface p-8">
+    <div id="appointment-card" class="rounded-[3px] bg-surface p-8">
       <h3 class="text-xl font-bold text-ink">Make An Appointment</h3>
       <form class="mt-6 grid grid-cols-2 gap-4" novalidate>
         <!-- Name -->
@@ -158,7 +158,7 @@ const services = [
         <!-- Submit -->
         <button
           type="submit"
-          class="col-span-2 rounded-full bg-accent py-3.5 text-sm font-semibold text-white transition hover:bg-accent-dark"
+          class="col-span-2 rounded-full bg-accent py-3.5 text-sm font-semibold text-white transition hover:bg-accent-dark active:scale-[0.97]"
         >
           Make An Appointment
         </button>
@@ -166,3 +166,19 @@ const services = [
     </div>
   </div>
 </section>
+
+<script>
+  const card = document.getElementById("appointment-card");
+  if (card) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          card.classList.add("animate-card-enter");
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.15 }
+    );
+    observer.observe(card);
+  }
+</script>

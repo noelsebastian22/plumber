@@ -8,7 +8,7 @@ const links = [
 ];
 ---
 
-<header class="sticky top-0 z-50 border-b border-line bg-surface/95 backdrop-blur">
+<header class="sticky top-0 z-50 border-b border-line bg-surface/95 backdrop-blur transition-shadow duration-300 ease-out-expo motion-reduce:transition-none" id="site-header">
   <div class="container-site flex h-16 items-center justify-between gap-6">
     <a href="/" class="text-lg font-extrabold tracking-tight" aria-label="PLUMBER. — home">
       PLUMBER<span class="text-accent">.</span>
@@ -34,7 +34,7 @@ const links = [
     <div class="flex items-center gap-3">
       <a
         href="#contact"
-        class="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent md:inline-block"
+        class="hidden rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent active:scale-[0.97] md:inline-block"
       >
         Book Now
       </a>
@@ -71,7 +71,7 @@ const links = [
       }
       <a
         href="#contact"
-        class="mt-2 rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-white"
+        class="mt-2 rounded-full bg-ink px-5 py-3 text-center text-sm font-semibold text-white transition active:scale-[0.97]"
       >
         Book Now
       </a>
@@ -95,4 +95,20 @@ const links = [
       toggle?.setAttribute("aria-expanded", "false");
     }
   });
+
+  const sentinel = document.getElementById("scroll-sentinel");
+  const header = document.getElementById("site-header");
+  if (sentinel && header) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          header.classList.remove("shadow-md", "shadow-ink/10");
+        } else {
+          header.classList.add("shadow-md", "shadow-ink/10");
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(sentinel);
+  }
 </script>

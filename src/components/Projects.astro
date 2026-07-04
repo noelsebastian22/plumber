@@ -45,7 +45,7 @@ const projects = [
                 width="480"
                 height="320"
                 loading="lazy"
-                class="aspect-[3/2] w-full object-cover transition duration-500 group-hover:scale-105"
+                class="aspect-[3/2] w-full object-cover transition duration-500 ease-out-expo motion-reduce:transition-none group-hover:scale-105"
               />
             </div>
             <!-- Body -->
@@ -58,7 +58,7 @@ const projects = [
               </div>
               <a
                 href="#contact"
-                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-white transition hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-white transition hover:bg-accent active:scale-[0.97] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
                 aria-label={`View project: ${title}`}
               >
                 <svg
